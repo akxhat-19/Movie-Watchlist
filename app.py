@@ -3,12 +3,15 @@ from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from tmdb import search_movie
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 app=Flask(__name__)
 bcrypt = Bcrypt(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///movies.sqlite3"
 db=SQLAlchemy(app)
-app.secret_key="past data"
+app.secret_key=os.getenv("SECRET_KEY")
 class Users(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     name=db.Column(db.String(100),unique=True,nullable=False)
@@ -151,7 +154,7 @@ def popper():
 def admin():
     if request.method=="POST":
       pwd=request.form['pwd']
-      if pwd=="developer@golu_akshat":
+      if pwd==os.getenv("ADMIN_PASSWORD"):
         val = Users.query.all()
         return render_template("database.html" , users=val)
       else:

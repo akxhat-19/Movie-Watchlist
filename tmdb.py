@@ -1,6 +1,8 @@
 import requests
-
-BASE_URL =  "http://www.omdbapi.com/?apikey=e35f96bd"
+import os
+from dotenv import load_dotenv
+load_dotenv()
+BASE_URL =  "http://www.omdbapi.com/?apikey={os.getenv('OMDB_API_KEY')}"
 
 def search_movie(movie_name):
     params={
