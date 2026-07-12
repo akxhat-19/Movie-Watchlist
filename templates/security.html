@@ -1,0 +1,218 @@
+<html>
+<head>
+    <title>Admin Access</title>
+    <style>
+        /* ==========================================
+           PAGE BACKGROUND
+        ========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%),
+                              radial-gradient(at 50% 0%, hsla(225,39%,25%,1) 0, transparent 50%),
+                              radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%),
+                              radial-gradient(at 100% 100%, hsla(253,16%,7%,1) 0, transparent 50%),
+                              radial-gradient(at 0% 100%, hsla(225,39%,15%,1) 0, transparent 50%);
+            background-color: #0f0f1a;
+            font-family: system-ui, -apple-system, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ==========================================
+           CARD CONTAINER
+        ========================================== */
+        .security-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6),
+                        0 0 80px rgba(233, 69, 96, 0.05);
+            text-align: center;
+        }
+
+        /* ==========================================
+           LOCK ICON
+        ========================================== */
+        .lock-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            filter: drop-shadow(0 0 12px rgba(233, 69, 96, 0.6));
+        }
+
+        /* ==========================================
+           HEADING
+        ========================================== */
+        .security-card h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 30%, #ff6b8b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.4rem;
+            text-shadow: none;
+            letter-spacing: -0.5px;
+        }
+
+        .security-card p {
+            color: #6b6b8f;
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* ==========================================
+           PASSWORD INPUT
+        ========================================== */
+        .input-wrapper {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .input-wrapper span {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1rem;
+            pointer-events: none;
+        }
+
+        .security-card input[type="password"] {
+            width: 100%;
+            padding: 14px 16px 14px 42px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            letter-spacing: 2px;
+        }
+
+        .security-card input[type="password"]::placeholder {
+            color: #6b6b8f;
+            letter-spacing: 0.5px;
+        }
+
+        .security-card input[type="password"]:focus {
+            border-color: #e94560;
+            background: rgba(233, 69, 96, 0.08);
+            box-shadow: 0 0 0 3px rgba(233, 69, 96, 0.15),
+                        0 0 20px rgba(233, 69, 96, 0.2);
+        }
+
+        /* ==========================================
+           SUBMIT BUTTON
+        ========================================== */
+        .security-card input[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #e94560, #cf3a53);
+            border: none;
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        .security-card input[type="submit"]:hover {
+            background: linear-gradient(135deg, #ff6b8b, #e94560);
+            box-shadow: 0 0 25px rgba(233, 69, 96, 0.6),
+                        0 0 50px rgba(233, 69, 96, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .security-card input[type="submit"]:active {
+            transform: translateY(0px);
+        }
+
+        /* ==========================================
+           WARNING TEXT
+        ========================================== */
+        .warning {
+            margin-top: 1.5rem;
+            color: #3a3a5c;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* ==========================================
+           RESPONSIVE
+        ========================================== */
+        @media (max-width: 480px) {
+            .security-card {
+                margin: 1rem;
+                padding: 2rem 1.5rem;
+            }
+        }
+        .flash-message {
+    background: rgba(233, 69, 96, 0.12);
+    border: 1px solid rgba(233, 69, 96, 0.4);
+    border-radius: 10px;
+    color: #ff6b8b;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.3px;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%   { transform: translateX(0); }
+    15%  { transform: translateX(-8px); }
+    30%  { transform: translateX(8px); }
+    45%  { transform: translateX(-6px); }
+    60%  { transform: translateX(6px); }
+    75%  { transform: translateX(-3px); }
+    90%  { transform: translateX(3px); }
+    100% { transform: translateX(0); }
+}
+    </style>
+</head>
+<body>
+    <div class="security-card">
+        {%with messages=get_flashed_messages()%}
+          {%if messages%}
+             {%for msg in messages%}
+                 <p class="flash">{{msg}}</p>
+             {%endfor%}
+          {%endif%}
+        {%endwith%}
+
+        <span class="lock-icon">🔐</span>
+        <h1>Admin Access</h1>
+        <p>Restricted area. Authorized personnel only.</p>
+
+        <form action="/admin" method="POST">
+            <div class="input-wrapper">
+                <span>🔑</span>
+                <input type="password" placeholder="Enter admin password" name="pwd">
+            </div>
+            <input type="submit" value="Authenticate">
+        </form>
+
+        <p class="warning">⚠️ Unauthorized access attempts are logged.</p>
+    </div>
+</body>
+</html>

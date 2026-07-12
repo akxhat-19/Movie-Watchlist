@@ -1,0 +1,12 @@
+{%extends "base_project.html"%}
+{%block title%} add movies page {%endblock %}
+{%block content%}
+   <form action = "#" , method = "POST">
+      <p><input type = "text" name = "movie"  placeholder = "Enter Your Movie"></p>
+      <select name="adder">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+      </select>
+      <p><input type = "submit" value = "submit"></p>
+   </form>
+{%endblock%}

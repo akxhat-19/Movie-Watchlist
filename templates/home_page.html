@@ -1,0 +1,77 @@
+{% extends "base_project.html"%}
+{%block title%} Home page {%endblock%}
+{%block content%}
+<!-- Hero Section -->
+<div class="hero-section">
+    <h1>🎬 CineTrack</h1>
+    <p class="hero-subtitle">Track the movies you love. Discover what to watch next.</p>
+    <div class="hero-buttons">
+        <a href="/login"><button class="btn-hero-primary">Get Started</button></a>
+        <a href="/enter"><button class="btn-hero-secondary">My Watchlist</button></a>
+    </div>
+</div>
+
+<!-- Carousel -->
+<div class="carousel-section">
+    <h2 class="section-heading">Now Showing</h2>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{url_for('static',filename='images/fight_club.jpg')}}" class="d-block w-100" alt="Fight Club">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Fight Club</h5>
+                    <p>A classic you cannot miss.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{url_for('static',filename='images/casino_royale.jpg')}}" class="d-block w-100" alt="Casino Royale">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Casino Royale</h5>
+                    <p>Bond at his finest.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{url_for('static',filename='images/pirates.jpg')}}" class="d-block w-100" alt="Pirates">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Pirates of the Caribbean</h5>
+                    <p>An adventure like no other.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="features-section">
+    <h2 class="section-heading">Why CineTrack?</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <span class="feature-icon">🎯</span>
+            <h3>Track Everything</h3>
+            <p>Keep a personal log of every movie you have watched or want to watch.</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">⭐</span>
+            <h3>Rate Movies</h3>
+            <p>Give your personal rating and remember how you felt about every film.</p>
+        </div>
+        <div class="feature-card">
+            <span class="feature-icon">📋</span>
+            <h3>Watchlist</h3>
+            <p>Never forget a movie again. Add it to your list and watch it later.</p>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

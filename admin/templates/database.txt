@@ -1,0 +1,9 @@
+{%extends "admin.html"%}
+{%block title%}
+   Database
+{%endblock%}
+{%block content%}
+   {%for user in users%}
+      <li> {{user.id}} , {{user.name}} , {{user.email}} , {{user.movies.title}} , {{user.movies.watched}} </li>
+   {%endfor%}
+{%endblock%}

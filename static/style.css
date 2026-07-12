@@ -1,0 +1,1127 @@
+/* ==========================================
+   1. TRIGGER MENU BUTTON STYLES
+   ========================================== */
+.btn-primary[data-bs-toggle="offcanvas"] {
+  background: transparent !important; /* Removes the blue background */
+  border: none !important;            /* Removes the default border */
+  color: #FFFDD0 !important;         /* Makes the text/icon black */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover state: Makes the text turn vibrant white and adds a clean glow */
+.btn-primary[data-bs-toggle="offcanvas"]:hover {
+  color: #ffffff !important;
+  background-color: #1a1a2e !important; /* Matches your sidebar background */
+  border-radius: 8px;
+  
+  /* Vibrant drop-shadow neon glow effect */
+  box-shadow: 0 0 15px rgba(233, 69, 96, 0.6), 
+              0 0 25px rgba(233, 69, 96, 0.4);
+  transform: translateY(-2px); /* Subtle click-me lift */
+}
+
+/* Active/Click state fallback */
+.btn-primary[data-bs-toggle="offcanvas"]:active {
+  transform: translateY(0px);
+}
+
+
+/* ==========================================
+   2. VIBRANT PARENT PAGE BACKGROUND
+   ========================================== */
+body {
+  /* High-end, smooth mesh gradient that is vibrant but easy on the eyes */
+  background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+                    radial-gradient(at 50% 0%, hsla(225,39%,25%,1) 0, transparent 50%), 
+                    radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%),
+                    radial-gradient(at 100% 100%, hsla(253,16%,7%,1) 0, transparent 50%),
+                    radial-gradient(at 0% 100%, hsla(225,39%,15%,1) 0, transparent 50%);
+  
+  background-color: #0f0f1a; /* Backup solid dark color if image fails */
+  background-attachment: fixed; /* Keeps gradient locked in place while scrolling */
+  background-size: cover;
+  min-height: 100vh;
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+/* ==========================================
+   ADD MOVIE FORM STYLES
+   ========================================== */
+
+/* Form container */
+form.Add.movie {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 480px;
+    margin: 2rem auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Text input bar */
+form.Add.movie input[type="text"] {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: #c9c9e3;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Placeholder text */
+form.Add.movie input[type="text"]::placeholder {
+    color: #6b6b8f;
+}
+
+/* Input focus effect */
+form.Add.movie input[type="text"]:focus {
+    border-color: #e94560;
+    background: rgba(233, 69, 96, 0.08);
+    box-shadow: 0 0 12px rgba(233, 69, 96, 0.3);
+    color: #ffffff;
+}
+
+/* Select dropdown */
+form.Add.movie select[name="adder"] {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: #c9c9e3;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;  /* removes default browser arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23e94560' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    margin-bottom: 1rem;
+}
+
+/* Select focus */
+form.Add.movie select[name="adder"]:focus {
+    border-color: #e94560;
+    background-color: rgba(233, 69, 96, 0.08);
+    box-shadow: 0 0 12px rgba(233, 69, 96, 0.3);
+}
+
+/* Select options */
+form.Add.movie select[name="adder"] option {
+    background-color: #1a1a2e;
+    color: #c9c9e3;
+}
+
+/* Submit button */
+/* ==========================================
+   DELETE MOVIE FORM STYLES
+   ========================================== */
+
+/* Form container */
+form.Deletemovie {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 480px;
+    margin: 2rem auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Text input bar */
+form.Deletemovie input[type="text"] {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    color: #c9c9e3;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Placeholder text */
+form.Deletemovie input[type="text"]::placeholder {
+    color: #6b6b8f;
+}
+
+/* Input focus effect */
+form.Deletemovie input[type="text"]:focus {
+    border-color: #e94560;
+    background: rgba(233, 69, 96, 0.08);
+    box-shadow: 0 0 12px rgba(233, 69, 96, 0.3);
+    color: #ffffff;
+}
+
+/* Submit button */
+form.Deletemovie input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #e94560, #cf3a53);
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.hero-section {
+    text-align: center;
+    padding: 0rem 2rem 3rem;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #a2a2c2;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-hero-primary {
+    padding: 14px 36px;
+    background: linear-gradient(135deg, #e94560, #cf3a53);
+    border: none;
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(233, 69, 96, 0.6),
+                0 0 50px rgba(233, 69, 96, 0.2);
+}
+
+.btn-hero-secondary {
+    padding: 14px 36px;
+    background: transparent;
+    border: 2px solid #e94560;
+    border-radius: 50px;
+    color: #e94560;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.btn-hero-secondary:hover {
+    background: rgba(233, 69, 96, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(233, 69, 96, 0.3);
+}
+
+/* ==========================================
+   SECTION HEADINGS
+   ========================================== */
+.section-heading {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+/* Decorative underline under section headings */
+.section-heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #e94560, #ff6b8b);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* ==========================================
+   CAROUSEL SECTION
+   ========================================== */
+.carousel-section {
+    padding: 2rem 1rem 4rem;
+}
+
+/* ==========================================
+   FEATURES SECTION
+   ========================================== */
+.features-section {
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    background: rgba(233, 69, 96, 0.08);
+    border-color: rgba(233, 69, 96, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(233, 69, 96, 0.15);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+    color: #a2a2c2;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   RESPONSIVE - TABLETS
+   ========================================== */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 3rem 1rem 2rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==========================================
+   RESPONSIVE - MOBILE
+   ========================================== */
+@media (max-width: 576px) {
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-hero-primary,
+    .btn-hero-secondary {
+        width: 100%;
+    }
+}
+/* Submit button hover */
+form.Deletemovie input[type="submit"]:hover {
+    background: linear-gradient(135deg, #ff6b8b, #e94560);
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.5),
+                0 0 40px rgba(233, 69, 96, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Submit button click */
+form.Deletemovie input[type="submit"]:active {
+    transform: translateY(0px);
+}
+
+/* Remove default p tag margin inside form */
+form.Deletemovie p {
+    margin-bottom: 1rem;
+}
+form.Add.movie input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #e94560, #cf3a53);
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+/* Submit button hover */
+form.Add.movie input[type="submit"]:hover {
+    background: linear-gradient(135deg, #ff6b8b, #e94560);
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.5),
+                0 0 40px rgba(233, 69, 96, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Submit button click */
+form.Add.movie input[type="submit"]:active {
+    transform: translateY(0px);
+}
+
+/* Remove default p tag margin inside form */
+form.Add.movie p {
+    margin-bottom: 1rem;
+}
+/* ==========================================
+   3. VIBRANT GRADIENT H1 HEADING STYLES
+   ========================================== */
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  
+  /* The core gradient text trick */
+  background: linear-gradient(135deg, #ffffff 30%, #ff6b8b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  /* Soft, elegant backing shadow to help text lift off the mesh background */
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Optional responsive tweak: scales down smoothly on mobile screens */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+/* 1. Change the main offcanvas background color and header border */
+#offcanvasExample.offcanvas {
+  background-color: #1a1a2e; /* Dark slate blue background */
+  color: #ffffff; /* White text for the title */
+}
+
+/* Ensure the close button matches a dark theme background */
+#offcanvasExample .btn-close {
+  filter: invert(1); /* Turns the black X icon into white */
+}
+
+/* 2. Change the appearance of the "Menu" Dropdown Button inside the tray */
+#offcanvasExample .dropdown-toggle {
+  background-color: #e94560; /* Vibrant accent color */
+  border-color: #e94560;
+  color: #ff0cd;
+  font-weight: 500;
+  width: 100%; /* Spans full width of the sidebar menu container */
+}
+
+/* Hover state for the dropdown trigger button */
+#offcanvasExample .dropdown-toggle:hover,
+#offcanvasExample .dropdown-toggle:focus {
+  background-color: #cf3a53;
+  border-color: #cf3a53;
+}
+
+/* 3. Style the dropdown menu container background */
+#offcanvasExample .dropdown-menu {
+  background-color: #161625; /* Slightly darker shade than the tray */
+  border: 1px solid #2e2e42;
+  width: 100%; /* Matches the button width perfectly */
+}
+
+/* 4. Style the text links (User page, Login, Logout) */
+#offcanvasExample .dropdown-item {
+  color: #a2a2c2; /* Clean, light grayish-blue link text color */
+  padding: 10px 15px; /* Adds space making links easier to tap on mobile */
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover/Focus states for the text links */
+#offcanvasExample .dropdown-item:hover,
+#offcanvasExample .dropdown-item:focus {
+  background-color: #e94560; /* Highlight box matching your accent button */
+  color: #ffffff; /* Turns text bright white on hover */
+}
+/* ==========================================
+   4. THE CINEMATIC SWEET-SPOT CAROUSEL SIZE
+   ========================================== */
+
+/* 1. Set the container size to be large and prominent, but safely framed inside the screen */
+#carouselExampleIndicators.carousel {
+  max-width: 1200px; /* Big and eye-catching, but leaves plenty of room for background borders */
+  margin: 2rem auto !important; /* Centers it perfectly with a comfortable gap below your heading */
+  border-radius: 16px; /* Premium, smooth modern corners */
+  overflow: hidden; /* Clips the images to match the smooth corners */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.55); /* Deep, soft shadow so it floats off your mesh gradient */
+}
+
+/* 2. Lock the image fit rules to match the new larger proportions */
+.carousel-inner .carousel-item img {
+  width: 100% !important;   /* Snaps the image perfectly to the 900px layout width */
+  height: 580px !important; /* Prominent landscape height—shows off the images without eating the screen */
+  object-fit: cover !important; /* Fills the space beautifully with zero distortion or squishing */
+  object-position: center !important; /* Keeps the middle of Dubai, Dublin, and NYC in perfect focus */
+}
+
+/* 3. Scale down dynamically for smaller screens so it never breaks your layout */
+@media (max-width: 992px) {
+  #carouselExampleIndicators.carousel {
+    max-width: 90% !important;
+  }
+  .carousel-inner .carousel-item img {
+    height: 340px !important; /* Scales down elegantly for tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-inner .carousel-item img {
+    height: 220px !important; /* Scales down cleanly for phone screens */
+  }
+}
+/* ==========================================
+   5. PARAGRAPH TEXT STYLES
+   ========================================== */
+p {
+  color: #c9c9e3;              /* Soft lavender-white — readable on dark bg without being harsh */
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;            /* Comfortable reading spacing */
+  letter-spacing: 0.3px;
+  margin-bottom: 1rem;
+}
+
+/* Slightly brighter for important/highlighted paragraphs */
+p.highlight {
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+/* Muted style for secondary info like timestamps */
+p.muted {
+  color: #6b6b8f;
+  font-size: 0.875rem;
+}
+
+/* Welcome message on user page */
+p.welcome {
+  font-size: 1.4rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ffffff 30%, #ff6b8b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+p, div, a {
+    box-sizing: border-box;
+}
+
+/* Target elements within the content area to give them structure */
+/* Import a premium, sleek modern font from Google Fonts */
+/* Import a geometric, premium bold font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&display=swap');
+
+/* Imported Cormorant Garamond with a bold, elegant weight (700) */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700&display=swap');
+
+.welcome{
+            font-family: 'DM Serif Display', serif;
+            /* Significantly increased font size as requested */
+            font-size: 11rem; 
+            font-weight: 400;
+            text-align: center;
+            text-transform: uppercase;
+            
+            /* Replicating the vintage off-white tone */
+            color: #f3eee3; 
+            
+            /* Tight letter spacing to match the high-end editorial feel */
+            letter-spacing: -1px; 
+            width: 100%;
+            display: block;
+
+            /* Force reset any interference */
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            background-clip: unset !important;
+            -webkit-text-fill-color: unset !important;
+
+            /* COMBINED VISUAL EFFECTS:
+               - The first layer mimics the sharp offset drop-shadow from the image.
+               - The subsequent layers generate the elegant, subtle vintage glow you requested.
+            */
+            text-shadow:
+                3px 3px 0px rgba(0, 0, 0, 0.9),
+                0 0 15px rgba(243, 238, 227, 0.35),
+                0 0 30px rgba(243, 238, 227, 0.2);
+        }
+
+        /* Responsive scaling for mobile devices */
+        @media (max-width: 768px) {
+            .marquee-heading {
+                font-size: 4rem;
+                letter-spacing: 0px;
+            }
+        }
+@media (max-width: 600px) {
+    .welcome {
+        font-size: 2.5rem;
+        letter-spacing: 0px; /* Reset spacing slightly for readability on mobile devices */
+        -webkit-text-stroke: 1.5px #10b981; 
+    }
+}/* ==========================================================================
+   Login form styles — scoped entirely to form.user.login
+   Safe to paste into your global stylesheet. Nothing here touches
+   any other <form> on the site because every rule is prefixed.
+   ========================================================================== */
+/* ==========================================================================
+   Login form styles — scoped 100% to form.user.login itself.
+   No selector here ever touches <body>, other forms, or global layout.
+   Centering is done via fixed positioning on the form, not a body wrapper.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+form.user.login {
+  --ink: #eef2f6;
+  --muted: #98a2b8;
+  --accent: #6ee7d8;              /* cool teal/mint — replaces the amber */
+  --accent-2: #7c9dff;            /* violet-blue, used in the button gradient */
+  --accent-soft: rgba(110, 231, 216, 0.14);
+  --glass: rgba(255, 255, 255, 0.055);
+  --glass-border: rgba(255, 255, 255, 0.13);
+
+  /* Center on the viewport WITHOUT touching <body> or any ancestor */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+
+  width: 100%;
+  max-width: 380px;
+  padding: 48px 36px 36px;
+  box-sizing: border-box;
+
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--ink);
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  animation: user-login-rise 0.5s ease-out;
+}
+
+@keyframes user-login-rise {
+  from { opacity: 0; transform: translate(-50%, -50%) translateY(14px); }
+  to   { opacity: 1; transform: translate(-50%, -50%) translateY(0); }
+}
+
+/* ---- Signature element: the user badge ---- */
+form.user.login::before {
+  content: "";
+  display: block;
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 22px;
+  background-color: var(--accent-soft);
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236ee7d8' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30px 30px;
+  box-shadow: 0 0 0 6px rgba(110, 231, 216, 0.07);
+}
+
+/* Heading generated purely in CSS from the badge — no HTML edit needed */
+form.user.login::after {
+  content: "Welcome back";
+  display: block;
+  text-align: center;
+  font-family: 'Sora', 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 26px;
+  order: -1; /* stays directly under the badge regardless of source order */
+}
+
+/* ---- Flash messages placed right after this form only ---- */
+form.user.login + font[color="white"] {
+  display: block;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  color: var(--accent) !important;
+  margin-bottom: 12px;
+}
+
+/* ---- The <p> wrappers Jinja renders — turned into a clean flex stack ---- */
+form.user.login p {
+  margin: 0 0 16px;
+  display: flex;
+}
+
+form.user.login p:last-of-type {
+  margin-bottom: 0;
+  margin-top: 6px;
+}
+
+/* ---- Text inputs ---- */
+form.user.login input[type="text"] {
+  width: 100%;
+  padding: 14px 16px;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--ink);
+
+  transition: border-color 0.25s ease, background 0.25s ease,
+              box-shadow 0.25s ease, transform 0.15s ease;
+}
+
+form.user.login input[type="text"]::placeholder {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+form.user.login input[type="text"]:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.22);
+  transform: translateY(-1px);
+}
+
+form.user.login input[type="text"]:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+/* ---- Submit button ---- */
+form.user.login input[type="submit"] {
+  position: relative;
+  width: 100%;
+  padding: 14px 16px;
+  margin-top: 6px;
+  overflow: hidden;
+  isolation: isolate;
+
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  border: none;
+  border-radius: 12px;
+
+  font-family: 'Sora', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #0c1420;
+  cursor: pointer;
+
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+/* Sweeping diagonal shine — the "aesthetic site" hover effect:
+   a light band slides across the button on hover via ::after */
+form.user.login input[type="submit"]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    115deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  z-index: 1;
+  transition: left 0.65s ease;
+  pointer-events: none;
+}
+
+form.user.login input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(124, 157, 255, 0.35);
+}
+
+form.user.login input[type="submit"]:hover::after {
+  left: 130%;
+}
+
+form.user.login input[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(124, 157, 255, 0.3);
+}
+
+form.user.login input[type="submit"]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---- Responsiveness ---- */
+@media (max-width: 480px) {
+  form.user.login {
+    max-width: calc(100% - 32px);
+    padding: 40px 24px 28px;
+    border-radius: 16px;
+  }
+
+  form.user.login::before {
+    width: 58px;
+    height: 58px;
+    background-size: 26px 26px;
+  }
+
+  form.user.login::after {
+    font-size: 1.2rem;
+  }
+
+  form.user.login input[type="text"],
+  form.user.login input[type="submit"] {
+    padding: 13px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ---- Respect reduced motion preferences ---- */
+@media (prefers-reduced-motion: reduce) {
+  form.user.login,
+  form.user.login input[type="text"],
+  form.user.login input[type="submit"],
+  form.user.login input[type="submit"]::after {
+    animation: none;
+    transition: none;
+  }
+}
+.highlight {
+    font-size: 1.1rem;
+    color: #6366f1; /* Vibrant neon indigo accent */
+    font-weight: 500;
+    margin: 0 0 8px 0;
+    background: rgba(99, 102, 241, 0.1);
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+.muted {
+    font-size: 0.9rem;
+    color: #9ca3af; /* Soft gray */
+    margin: 0 0 30px 0;
+}
+
+/* Flash Messages Styling */
+p:not([class]) {
+    /* Targets flash messages or generic fallback text */
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border-left: 4px solid #f59e0b;
+    margin-bottom: 20px;
+}
+
+/* ==========================================
+   Beautiful & Organized Movie Rows
+   ========================================== */
+/* Targets the exact paragraph structure generated by your movie loop */
+.welcome ~ p:not(.highlight):not(.muted) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+    /* Elegant Dark Card Appearance */
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 4px solid #10b981; /* Green accent boundary indicator */
+    
+    /* Precision Padding & Margins */
+    padding: 16px 24px;
+    margin: 12px 0;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #f3f4f6;
+    
+    /* Smooth responsiveness animations */
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
+                background 0.2s ease, 
+                box-shadow 0.2s ease;
+}
+
+/* Hover effects for individual movie cards */
+.welcome ~ p:not(.highlight):not(.muted):hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================
+   Highly Responsive Interactive Buttons
+   ========================================== */
+/* Ensures links align well side-by-side or stacked on small viewports */
+a {
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 15px;
+}
+
+a button {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* Unique color profiles matching button intent */
+a[href="/add"] button {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: #ffffff;
+}
+
+a[href="/add"] button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(79, 70, 229, 0.5);
+    filter: brightness(1.1);
+}
+
+a[href="/delete"] button {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: #ffffff;
+}
+
+a[href="/delete"] button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(220, 38, 38, 0.5);
+    filter: brightness(1.1);
+}
+
+/* Click feedback compression animation */
+a button:active {
+    transform: translateY(-1px);
+}
+
+/* ==========================================
+   Mobile-Responsive Media Queries
+   ========================================== */
+@media (max-width: 600px) {
+    .welcome {
+        font-size: 1.8rem;
+    }
+    
+    .welcome ~ p:not(.highlight):not(.muted) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 14px 18px;
+    }
+    
+    a {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-top: 12px;
+    }
+    
+    a button {
+        width: 100%;
+        padding: 14px;
+    }
+}
+$carousel-control-color:             $white;
+$carousel-control-width:             15%;
+$carousel-control-opacity:           .5;
+$carousel-control-hover-opacity:     .9;
+$carousel-control-transition:        opacity .15s ease;
+$carousel-control-icon-filter:       null;
+
+$carousel-indicator-width:           30px;
+$carousel-indicator-height:          3px;
+$carousel-indicator-hit-area-height: 10px;
+$carousel-indicator-spacer:          3px;
+$carousel-indicator-opacity:         .5;
+$carousel-indicator-active-bg:       $white;
+$carousel-indicator-active-opacity:  1;
+$carousel-indicator-transition:      opacity .6s ease;
+
+$carousel-caption-width:             70%;
+$carousel-caption-color:             $white;
+$carousel-caption-padding-y:         1.25rem;
+$carousel-caption-spacer:            1.25rem;
+
+$carousel-control-icon-width:        2rem;
+
+$carousel-control-prev-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0'/></svg>");
+$carousel-control-next-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$carousel-control-color}'><path d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708'/></svg>");
+
+$carousel-transition-duration:       .6s;
+$carousel-transition:                transform $carousel-transition-duration ease-in-out; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
+/* ==========================================
+   WATCHLIST HEADING
+========================================== */
+.watchlist-header {
+    width: 100%;
+    margin: 2rem 0 1rem;
+    padding: 0 1rem;
+}
+
+.watchlist-heading {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 30%, #ff6b8b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.75rem;
+    padding: 1rem 1rem;
+}
+
+/* ==========================================
+   MOVIES GRID
+========================================== */
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2rem;
+    padding: 1rem 2rem;
+    width: 100%;
+}
+
+/* ==========================================
+   MOVIE CARD
+========================================== */
+.movie-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(233, 69, 96, 0.4);
+    box-shadow: 0 16px 40px rgba(233, 69, 96, 0.2);
+}
+
+/* ==========================================
+   POSTER
+========================================== */
+.movie-poster {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.no-poster {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* ==========================================
+   MOVIE INFO
+========================================== */
+.movie-info {
+    padding: 1.25rem;
+}
+
+.movie-title-cell {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-info p {
+    color: #a2a2c2;
+    font-size: 0.875rem;
+    margin-bottom: 0.4rem;
+}
+
+/* ==========================================
+   WATCHED STATUS
+========================================== */
+.watched-yes {
+    color: #2ed573 !important;
+    font-weight: 600;
+}
+
+.watched-no {
+    color: #e94560 !important;
+    font-weight: 600;
+}
+
+/* ==========================================
+   BODY
+========================================== */
+body {
+    overflow-x: hidden;
+}

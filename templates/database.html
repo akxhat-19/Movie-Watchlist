@@ -1,0 +1,16 @@
+{%extends "base_project.html"%}
+{%block title%}
+   Database
+{%endblock%}
+{%block content%}
+<font color = "white">
+<ul>
+   {%for user in users%}
+      <li> {{user.id}} , {{user.name}} , {{user.hashed_password}} {{user.created_at}}</li>
+      {%for movie in user.movies%}
+           <li> {{movie.title}} , {{movie.watched}} , {{movie.user_id}} </li>
+      {%endfor%}
+   {%endfor%}
+</ul>
+</font>
+{%endblock%}

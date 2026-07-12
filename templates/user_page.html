@@ -1,0 +1,48 @@
+{%extends "base_project.html"%}
+{%block title%}User_page{%endblock%}
+{%block content%}
+{%with messages = get_flashed_messages()%}
+    {%if messages%}
+        {%for msg in messages%}
+           <p>{{msg}}</p>
+        {%endfor%}
+    {%endif%}
+{%endwith%}
+ <p class="welcome">Welcome {{user.name}}!!</p>
+  <p class="highlight"> Password : {{user.hashed_password}}</p>
+  <p class="muted"> Account Created at : {{user.created_at}}</p>
+<div class="watchlist-header">
+    <h2 class="watchlist-heading">🎬 My Watchlist</h2>
+    <!-- delete the watchlist-columns div -->
+</div>
+<div class="movies-grid">
+{% for movie in user.movies %}
+<div class="movie-card">
+    {% if movie.poster %}
+        <img src="{{movie.poster}}" alt="{{movie.title}}" class="movie-poster">
+    {% else %}
+        <div class="no-poster">🎬</div>
+    {% endif %}
+    <div class="movie-info">
+        <h3 class="movie-title-cell">{{movie.title}}</h3>
+        <p>⭐ {{movie.rating if movie.rating else 'N/A'}}</p>
+        <p>📅 {{movie.release_date if movie.release_date else 'N/A'}}</p>
+        <p class="{% if movie.watched %}watched-yes{% else %}watched-no{% endif %}">
+            {% if movie.watched %} ✅ Watched {% else %} ❌ Not Watched {% endif %}
+        </p>
+    </div>
+</div>
+{% endfor %}
+</div>
+<a href="/add">
+        <button type="button">ADD Movie</button>
+</a>
+<a href="/delete">
+        <button type="button">Delete Movie</button>
+</a>
+<a href="/deleteuser">
+        <button type="button">Delete Account</button>
+</a>
+
+
+{%endblock%}

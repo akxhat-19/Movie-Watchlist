@@ -1,0 +1,17 @@
+{%extends "base_project.html"%}
+{%block title%}User_page{%endblock%}
+{%block content%}
+  <p> Welcome {{user.name}}!!</p>
+  {%for movie in user.movies%}
+      <p>{{movie,title}} &emsp; {{movie.rating}} &emsp; {{movie.watched}} &emsp;  </p>
+  {%endfor%}
+<a href="/add">
+        <button type="button">ADD Movie</button>
+</a>
+<a href="/delete">
+        <button type="button">Delete Movie</button>
+</a>
+{%endblock%}
+<a href="/delete">
+   <button type="button">Delete Movie</button>
+</a>
